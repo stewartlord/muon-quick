@@ -19,14 +19,14 @@ function createWindow () {
   })
 
   // and load brave.com
-  mainWindow.loadURL('https://www.brave.com')
+  // mainWindow.loadURL('https://www.google.com')
 
   // alternatively, uncomment the following line to load index.html via
   // 'chrome://brave' to expose additional APIs such as 'chrome.ipcRenderer'
-  //mainWindow.loadURL('chrome://brave/' + __dirname + '/index.html');
+  mainWindow.loadURL('chrome://brave/' + __dirname + '/index.html');
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
