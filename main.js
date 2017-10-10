@@ -12,6 +12,9 @@ const url = require('url')
 let mainWindow
 
 function createWindow () {
+
+  electron.session.defaultSession.extensions.load(__dirname + '/lastpass/4.1.65.12_0', {}, 'unpacked');
+
   // Create the browser window.
   mainWindow = new BrowserWindow({
     title: 'Muon Quick Start',
