@@ -1,6 +1,6 @@
 const electron = require('electron')
 // Module to control application life.
-const app = electron.app
+const {app, Menu, Tray, nativeImage} = electron
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
@@ -12,6 +12,16 @@ const url = require('url')
 let mainWindow
 
 function createWindow () {
+  let path = __dirname + "\\icon.png";
+  let tray = new Tray(nativeImage.createFromPath(path))
+  const contextMenu = Menu.buildFromTemplate([
+    {label: 'Item1', type: 'radio'},
+    {label: 'Item2', type: 'radio'},
+    {label: 'Item3', type: 'radio'}
+  ])
+  tray.setToolTip('This is my application.')
+  tray.setContextMenu(contextMenu)
+
   // Create the browser window.
   mainWindow = new BrowserWindow({
     title: 'Muon Quick Start',
